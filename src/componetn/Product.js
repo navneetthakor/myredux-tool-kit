@@ -19,7 +19,7 @@ export default function Product() {
   const cards = product.map((prod) => {
     return(
     <div className="container" >
-      <Card style={{ width: "200Px", height:"300px" }}>
+      <Card style={{ width: "300Px", height:"300px" }}>
         <Card.Img variant="top" src={prod.image} style={{width: "80px", height: "100px"}}/>
         <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
@@ -39,8 +39,10 @@ export default function Product() {
       <h1 className="center">
         All the PRODUCTS
       </h1>
-      <div className="row" style={{width: "80%", height:"30%"}}>
+      <div className="container">
+        <div className="row">
         {cards}
+        </div>
       </div>
     </>
   );

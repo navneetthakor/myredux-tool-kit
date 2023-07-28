@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Nbar from './Nbar'
 
 export default function RootLayout() {
   return (
     <div>
-      <h1>Navigetion</h1>
+      <Nbar/>
       <main>
         <Outlet/>
       </main>

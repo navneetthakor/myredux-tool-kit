@@ -9,7 +9,7 @@ import RootLayout from './componetn/RootLayout';
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route exect path="/" element={<RootLayout/>}>
-      <Route exect path='/' element={<Product/>}/>
+      <Route index element={<Product/>}/>
       <Route exect path= "/dashbord" element={<Dashbord/>}/>
       <Route exect path= "/cart" element={<Cart/>}/>
 
