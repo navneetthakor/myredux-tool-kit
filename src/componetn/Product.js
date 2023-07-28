@@ -36,10 +36,10 @@ export default function Product() {
   // actual funtion 
   return (
     <>
-      <h1 className="center">
-        All the PRODUCTS
-      </h1>
       <div className="container">
+      <h1 className="justify-content">
+        PRODUCTS
+      </h1>
         <div className="row">
         {cards}
         </div>
