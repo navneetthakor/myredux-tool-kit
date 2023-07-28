@@ -2,10 +2,11 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-// import Container form "react-bootstrap/cont"
+import {useDispatch} from 'react-redux'
+import { add } from "../store/CartSlice";
 
 export default function Product() {
-
+  const dispatch = useDispatch();
   const [product, getProduct] = useState([]);
 
   // to fetch the data from api 
@@ -14,6 +15,12 @@ export default function Product() {
       .then((data) => data.json())
       .then((result) => getProduct(result));
   });
+
+  //function to dispatch 
+  const addToCart = (prod) => {
+    // dispatch a add aciton 
+    dispatch(add(prod));
+  }
 
   // to display all the cards 
   const cards = product.map((prod) => {
@@ -26,7 +33,7 @@ export default function Product() {
           <Card.Text>
             INR : {prod.price}
           </Card.Text>
-          <Button variant="primary">Add to card</Button>
+          <Button variant="primary" onClick={() => addToCart(prod)}>Add to card</Button>
         </Card.Body>
       </Card>
     </div>

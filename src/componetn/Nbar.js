@@ -6,8 +6,10 @@ import Navbar from 'react-bootstrap/Navbar';
 // import NavDropdown from 'react-bootstrap/NavDropdown';
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function Nbar() {
+  const cartProduct = useSelector(state => state.cart)
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
     <Container fluid>
@@ -30,7 +32,7 @@ export default function Nbar() {
           <Navbar.Toggle/>
           <Navbar.Collapse className='justify-content-end'>
             <Navbar.Text >
-              <Link to="/cart" as={Link}>MY bag : 0</Link>    
+              <Link to="/cart" as={Link}>MY bag : {cartProduct.length}</Link>    
             </Navbar.Text>
           </Navbar.Collapse>
     </Container>
