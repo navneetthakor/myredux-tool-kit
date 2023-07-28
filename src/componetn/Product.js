@@ -19,12 +19,12 @@ export default function Product() {
   const cards = product.map((prod) => {
     return(
     <div className="container" >
-      <Card style={{ width: "200Px", height:"500px" }}>
+      <Card style={{ width: "200Px", height:"300px" }}>
         <Card.Img variant="top" src={prod.image} style={{width: "80px", height: "100px"}}/>
         <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
           <Card.Text>
-            {prod.description}
+            INR : {prod.price}
           </Card.Text>
           <Button variant="primary">Add to card</Button>
         </Card.Body>
